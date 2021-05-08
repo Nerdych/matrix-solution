@@ -19,7 +19,7 @@ using System.Text.RegularExpressions;
 
 namespace MatrixSolution
 {
-    delegate int NumberOperation(int i, int j, Random rnd);
+   
     public partial class MainWindow : Window
     {
         MyMatrix<double> numbersMatrix1;
@@ -92,23 +92,6 @@ namespace MatrixSolution
             numbersMatrix1 = MyMatrix<double>.GenerateMatrix(x, y, (x1, y1, rnd) => rnd.Next(-100, 100) + x1 - y1);        
             numbersMatrix2 = MyMatrix<double>.GenerateMatrix(x, y, (x1, y1, rnd) => rnd.Next(-100, 100) + x1 - y1);
             numbersResult = new MyMatrix<double>(x, y);
-
-            //Random rnd = new Random();
-
-            //for (int i = 0; i < x; i++)
-            //{
-            //    for (int j = 0; j < y; j++)
-            //    {
-            //        numbersMatrix1[i, j] = rand(i, j, rnd);
-            //        numbersMatrix2[i, j] = rand(i, j, rnd);
-            //    }
-            //}
-        }
-
-        public static int GetRandomNumber(int x, int y, Random rnd)
-        {
-            int value = rnd.Next(-100, 100) + x - y;
-            return value;
         }
 
         private void Calculate()
